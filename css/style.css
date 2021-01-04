@@ -43,6 +43,11 @@ div h2{
     font-family: Arial; 
 }
 
+table ,  th, td{
+  border: black solid 5px;
+  padding: 5px;
+  
+}
 
 title {
     font-size: x-large;
