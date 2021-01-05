@@ -13,11 +13,12 @@ function AllObjects(passedName, passedMinHourlyCoustmer, passedMaxHourlyCoustmer
    this.totalResult = 0;
 
 }
-
+// calculate the random cookies
 AllObjects.prototype.randomNumberA = function () {
    return Math.floor(Math.random() * (this.maxHourlyCoustmer - this.minHourlyCoustmer) + this.minHourlyCoustmer);
 }
 
+// fill the array with number of cookies per hour
 AllObjects.prototype.mathPart = function () {
    for (var i = 0; i < hours.length; i++) {
       var rand = this.randomNumberA();
@@ -69,6 +70,8 @@ AllObjects.prototype.tableFunction = function () {
 
 }
 
+
+
 AllObjects.prototype.tableFooterFunction = function () {
    var footerRaw = document.createElement('tr');
    table.appendChild(footerRaw);
@@ -76,59 +79,140 @@ AllObjects.prototype.tableFooterFunction = function () {
    var footHead = document.createElement('th');
    footHead.textContent = 'Total';
    footerRaw.appendChild(footHead);
+   for (var r = 0; r < sumationDATA.length; r++) {
+      var sumDataPerHour = document.createElement("td");
+      sumDataPerHour.textContent = sumationDATA[r];
+      footerRaw.appendChild(sumDataPerHour);
+   }
 
+   var sum = 0;
+   for(var y = 0 ;y < sumationDATA.length; y++ ){
+      sum = sum +sumationDATA[y];
+   }
+
+     
+      var totalDataPerHour = document.createElement("td");
+      totalDataPerHour.textContent = sumationDATA[sumationDATA.length-1];
+      footerRaw.appendChild(totalDataPerHour);
 }
-
-
-
 var locationOne = new AllObjects('Seattle', 23, 65, 6.3);
 var locationTWO = new AllObjects('Tokyo', 3, 24, 1.2);
 var locationThree = new AllObjects('Dubai', 11, 38, 3.7);
 var locationFour = new AllObjects('Paris', 20, 38, 2.3);
 var locationFive = new AllObjects('Lima', 2, 16, 4.6);
+var sumationDATA = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+var allLocations = [locationOne, locationTWO, locationThree, locationFour, locationFive];
+var totalraw = 0;
+
+
+AllObjects.prototype.gatAllCookies = function(){
+ 
+      for (var x = 0 ; x < this.arrayPerDay.length; x++ ){
+         sumationDATA[x]= sumationDATA[x] + this.arrayPerDay[x]; 
+         
+   
+      }
+   
+}
+
+function total(){
+   var footerRaw = document.createElement('tr');
+   table.appendChild(footerRaw);
+
+   var footHead = document.createElement('th');
+   footHead.textContent = 'Total';
+   footerRaw.appendChild(footHead);
+   for (var r = 0; r < sumationDATA.length; r++) {
+
+      var sumDataPerHour = document.createElement("td");
+      sumDataPerHour.textContent = sumationDATA[r];
+      footerRaw.appendChild(sumDataPerHour);
+   
+   }
+   var sum = 0;
+   for(var y = 0 ;y < sumationDATA.length; y++ ){
+      sum = sum +sumationDATA[y];
+      console.log(sumationDATA[y])
+   }
+
+      // var totalDataPerHour = document.createElement("td");
+      // totalDataPerHour.textContent = sum;
+      // footerRaw.appendChild(totalDataPerHour);
+}
+
+
+
+
+ function functionOfObject() {
+
+  
+
+   for (var x = 0 ; x< allLocations.length; x++ ){
+
+      allLocations[x].mathPart();
+      console.log(allLocations[x]);
+      allLocations[x].tableFunction();
+      allLocations[x].gatAllCookies();
+   }
+  
+
+}
 
 
 
 
 
 
-locationOne.randomNumberA();
-locationOne.mathPart();
-console.log(locationOne);
-locationOne.tableFunction();
+
+
+functionOfObject();
+total();
+
+
+
+// locationOne.randomNumberA();
+// locationOne.mathPart();
+// console.log(locationOne);
+// locationOne.tableFunction();
+// locationOne.gatAllCookies();
 
 
 
 
-locationTWO.randomNumberA();
-locationTWO.mathPart();
-console.log(locationTWO);
-locationTWO.tableFunction();
+
+// locationTWO.randomNumberA();
+// locationTWO.mathPart();
+// console.log(locationTWO);
+// locationTWO.tableFunction();
+// locationTWO.gatAllCookies();
 
 
 
-locationThree.randomNumberA();
-locationThree.mathPart();
-console.log(locationThree);
-locationThree.tableFunction();
+// locationThree.randomNumberA();
+// locationThree.mathPart();
+// console.log(locationThree);
+// locationThree.tableFunction();
+// locationThree.gatAllCookies();
 
 
 
-locationFour.randomNumberA();
-locationFour.mathPart();
-console.log(locationFour);
-locationFour.tableFunction();
+// locationFour.randomNumberA();
+// locationFour.mathPart();
+// console.log(locationFour);
+// locationFour.tableFunction();
+// locationFour.gatAllCookies();
 
 
 
 
-locationFive.randomNumberA();
-locationFive.mathPart();
-console.log(locationFive);
-locationFive.tableFunction();
-locationFive.tableFooterFunction();
+// locationFive.randomNumberA();
+// locationFive.mathPart();
+// console.log(locationFive);
+// locationFive.tableFunction();
+// locationFive.tableFooterFunction();
+// locationFive.gatAllCookies();
 
-
+// tatalFunction();
 
 
 
