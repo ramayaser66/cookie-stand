@@ -1,17 +1,35 @@
 
-
-body {
-    background-color: rgb(177, 193, 206);
-
+@import url('https://fonts.googleapis.com/css2?family=Potta+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Redressed&display=swap');
+.nav {
+    /* display: inline; */
+    background-color: rgb(12, 12, 53);
 }
 
-header{
-  border: dashed;
-  border-color: rgb(212, 212, 221);
-  width: 100%; 
-  background-color: rgb(5, 4, 4);
-  color: white;
+body {
+    background-color: rgb(159, 230, 218);
+}
 
+header {
+    background-color: blueviolet;
+}
+
+header nav ul li {
+    display: inline-flex;
+    margin: 10px;
+    padding: 20px;
+    color: white;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 25px;
+}
+
+a:hover {
+    background-color: turquoise;
+    padding: 20px;
 }
 
 
@@ -121,32 +139,11 @@ p::first-letter {
     background: rgb(98, 175, 98);
   }
 
-  table :hover {
-    background-color: rgb(164, 196, 226);
-  }
+ 
 
   
   ol, li:hover {
     background-color: rgb(161, 218, 210);
   }
 
- .images{
-   display: block; 
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-margin-left: 25px;
- }
- .images img {
-   width: 200px;
-   height: 150px;
-   padding: 3px;
- }
 
-
-
- table, th,td{
-   border: solid;
-   width: 4px;
-   color: black;
- }
