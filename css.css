@@ -1,0 +1,49 @@
+.nav{
+
+    /* display: inline; */
+     background-color: rgb(12, 12, 53);
+
+}
+
+header section nav ul li {
+    display: inline-flex;
+    margin: 10px;
+    padding: 20px;
+    color: white;
+
+}
+
+header section{
+    background-color: blueviolet; 
+}
+
+
+
+
+body{
+    background-color: rgb(159, 230, 218);
+}
+
+section h1{
+
+    text-align: center;
+    margin-top: 20px;
+
+}
+
+section h1 img{
+    text-align: center;
+    margin-top: 20px;
+margin-left: 500px;
+background-color: tomato;
+
+
+}
+
+.center{
+    /* text-align: center; */
+   
+    text-align: center;
+   
+    
+}
