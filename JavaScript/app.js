@@ -112,9 +112,9 @@ var locationForm = document.getElementById("newLocation");
 locationForm.addEventListener("submit", function (event) {
     event.preventDefault();
     var locationName = event.target.locatin.value;
-    var minNumb = event.target.minNumber.value;
-    var maxNumb = event.target.maxNumber.value;
-    var avgr = event.target.avg.value;
+    var minNumb = parseInt(event.target.minNumber.value);
+    var maxNumb = parseInt(event.target.maxNumber.value);
+    var avgr = parseFloat(event.target.avg.value);
     newLocationStand = new AllObjects(locationName, minNumb, maxNumb, avgr);
     newLocationStand.mathPart();
     newLocationStand.tableFunction();
@@ -122,6 +122,7 @@ locationForm.addEventListener("submit", function (event) {
     total();
     var row = document.getElementById("tablefooter");
     row.remove();
+
+console.log(newLocationStand); 
 });
 total();
-
